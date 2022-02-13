@@ -2,6 +2,7 @@
 let category = "top-headlines";
 const newsKey = `39c143627cee481882724a0a7fa661f1`;
 const newsUrl = `https://newsapi.org/v2/${category}?country=gb&apiKey=${newsKey}`;
+const categorybuttons = Array.from(document.querySelectorAll(".category"));
 
 function getNews() {
   fetch(newsUrl)
@@ -16,3 +17,9 @@ function getNews() {
     })
     .catch((error) => console.log(error));
 }
+
+categorybuttons.forEach((button) =>
+  button.addEventListener("click", (e) => {
+    console.log(e.target.value);
+  })
+);
