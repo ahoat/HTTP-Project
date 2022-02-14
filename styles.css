@@ -108,8 +108,31 @@ h1 {
 
 .weather-container {
     
-    border: solid black;
     padding-top: 20rem;
+    padding-bottom: 2rem;
+    
 }
 
+.weather {
+    display: grid;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 0.5rem;   
+    border: solid black 0.1rem;
+    max-width: 30rem;
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px 2px gray;
+    padding-bottom: 2rem;
+}
 
+.city {
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.temp, .conditions {
+    font-size: 2rem;
+    font-weight: bold;
+}

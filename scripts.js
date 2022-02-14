@@ -58,6 +58,7 @@ getNews();
 const submitBtn = document.querySelector(".submit-btn");
 const searchbar = document.querySelector(".searchbar");
 const temp = document.querySelector(".temp");
+const conditions = document.querySelector(".conditions");
 const openWeatherKey = "be955245690a12ec7d74434862d819af";
 const city = document.querySelector(".city");
 
@@ -73,7 +74,8 @@ function getWeather () {
         // .then (console.log)
         .then((data) => {
             city.textContent = data.name;
-            temp.textContent = Math.floor((data.main.temp)-273.5);           
+            conditions.textContent = data.weather[0].description;
+            temp.innerHTML = Math.floor((data.main.temp)-273.5) + " &#8451;";           
         })
         .catch ((error) => {console.log(`Error loading data for ${defaultCity}`)});
 
@@ -88,10 +90,10 @@ submitBtn.addEventListener("click", function () {
         if (!response.ok) throw new Error(response.status);
         return response.json();
      })
-    // .then (console.log)
     .then((data) => {
         city.textContent = data.name;
-        temp.textContent = Math.floor((data.main.temp)-273.5);           
+        conditions.textContent = data.weather[0].description;
+        temp.innerHTML = Math.floor((data.main.temp)-273.5) + " &#8451;";           
     })
     .catch ((error) => {console.log("City not found")})
 });
