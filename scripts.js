@@ -52,3 +52,24 @@ categorybuttons.forEach((button) =>
 );
 
 getNews();
+
+
+// Weather API
+
+const temp = document.querySelector(".temp");
+const openWeatherKey = "be955245690a12ec7d74434862d819af";
+const city = "London";
+  
+function getWeather () {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${openWeatherKey}`)
+        .then((response) => {
+            if (!response.ok) throw new Error(response.status);
+            return response.json();
+         })
+        .then(console.log)
+        .then((data) => {
+            temp.innerHTML = data.main.temp  
+        })
+}
+
+window.onload = getWeather ();
