@@ -1,7 +1,6 @@
 // News API call
 const newsTitle = Array.from(document.querySelectorAll(".news-title"));
 const newsImage = Array.from(document.querySelectorAll(".news-img"));
-let img;
 const newsArtile = Array.from(document.querySelectorAll(".news-article"));
 const newsLink = Array.from(document.querySelectorAll(".news-link"));
 
@@ -28,7 +27,9 @@ function getNews() {
           img = new Image(200);
           image.appendChild(img);
           img.src = data.articles[index].urlToImage;
-        } else img.src = data.articles[index].urlToImage;
+        } else {
+          image.childNodes[0].src = data.articles[index].urlToImage;
+        }
       });
       newsArtile.forEach((news, index) => {
         news.innerHTML = data.articles[index].description;
