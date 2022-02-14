@@ -101,6 +101,7 @@ submitBtn.addEventListener("click", function () {
       city.textContent = data.name;
       conditions.textContent = data.weather[0].description;
       temp.innerHTML = Math.floor(data.main.temp - 273.5) + " &#8451;";
+      errorMessage.textContent = ""
     })
     .catch((error) => {
           errorMessage.textContent = "Please enter a valid city"
