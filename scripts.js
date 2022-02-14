@@ -58,7 +58,9 @@ getNews();
 
 const temp = document.querySelector(".temp");
 const openWeatherKey = "be955245690a12ec7d74434862d819af";
-const city = "London";
+const locations = document.querySelector(".city");
+const city = "hawaii"
+
   
 function getWeather () {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${openWeatherKey}`)
@@ -66,9 +68,12 @@ function getWeather () {
             if (!response.ok) throw new Error(response.status);
             return response.json();
          })
-        .then(console.log)
+        // .then (console.log)
         .then((data) => {
-            temp.innerHTML = data.main.temp  
+            locations.textContent = data.name;
+            temp.textContent = Math.floor((data.main.temp)-273.5);
+            
+            
         })
 }
 
