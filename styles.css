@@ -25,7 +25,7 @@ h1 {
   text-align: center;
   letter-spacing: 5px;
   padding: 3.5em 0 0.6em 0;
-  margin: -4em auto 1em 3em;
+  margin: -4em auto 1em 2em;
   z-index: 2;
 }
 
@@ -55,7 +55,7 @@ h1 {
 .news {
   max-width: 55em;
   margin: 2em auto;
-  padding-top: 10em;
+  padding-top: 11em;
 }
 
 .buttons {
@@ -92,7 +92,6 @@ h1 {
   grid-template-columns: 200px 1fr;
   grid-template-rows: 1fr 1em;
   padding-bottom: 1em;
-  max-height: 8em;
 }
 
 .news-img * {
@@ -103,36 +102,37 @@ h1 {
   justify-self: end;
   grid-area: 2/2/3/3;
   padding-right: 1em;
-  margin-top: -1em;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: bb1919;
 }
 
 .weather-container {
-    
-    padding-top: 20rem;
-    padding-bottom: 2rem;
-    
+  padding-top: 20rem;
+  padding-bottom: 2rem;
 }
 
 .weather {
-    display: grid;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    gap: 0.5rem;   
-    border: solid black 0.1rem;
-    max-width: 30rem;
-    border-radius: 10px;
-    box-shadow: 1px 2px 2px 2px gray;
-    padding-bottom: 2rem;
+  display: grid;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 0.5rem;
+  border: solid black 0.1rem;
+  max-width: 30rem;
+  border-radius: 10px;
+  box-shadow: 1px 2px 2px 2px gray;
+  padding-bottom: 2rem;
 }
 
 .city {
-    font-size: 3rem;
-    font-weight: bold;
-    text-decoration: underline;
+  font-size: 3rem;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
-.temp, .conditions {
-    font-size: 2rem;
-    font-weight: bold;
+.temp,
+.conditions {
+  font-size: 2rem;
+  font-weight: bold;
 }

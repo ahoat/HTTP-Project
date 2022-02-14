@@ -18,6 +18,7 @@ function getNews() {
       return response.json();
     })
     .then((data) => {
+      console.log(data);
       newsSubTitle.innerHTML = `Top ${category} news`;
       newsTitle.forEach((title, index) => {
         title.innerHTML = data.articles[index].title;
@@ -27,8 +28,10 @@ function getNews() {
           img = new Image(200);
           image.appendChild(img);
           img.src = data.articles[index].urlToImage;
+          img.alt = "photograph from news article";
         } else {
           image.childNodes[0].src = data.articles[index].urlToImage;
+          image.childNodes[0].src = "photograph from news article";
         }
       });
       newsArtile.forEach((news, index) => {
@@ -53,7 +56,6 @@ categorybuttons.forEach((button) =>
 
 getNews();
 
-
 // Weather API
 const submitBtn = document.querySelector(".submit-btn");
 const searchbar = document.querySelector(".searchbar");
@@ -62,42 +64,46 @@ const conditions = document.querySelector(".conditions");
 const openWeatherKey = "be955245690a12ec7d74434862d819af";
 const city = document.querySelector(".city");
 
-
 let defaultCity = "London";
 
-function getWeather () {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${defaultCity}&appid=${openWeatherKey}`)
-        .then((response) => {
-            if (!response.ok) throw new Error(response.status);
-            return response.json();
-         })
-        // .then (console.log)
-        .then((data) => {
-            city.textContent = data.name;
-            conditions.textContent = data.weather[0].description;
-            temp.innerHTML = Math.floor((data.main.temp)-273.5) + " &#8451;";           
-        })
-        .catch ((error) => {console.log(`Error loading data for ${defaultCity}`)});
-
+function getWeather() {
+  fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${defaultCity}&appid=${openWeatherKey}`
+  )
+    .then((response) => {
+      if (!response.ok) throw new Error(response.status);
+      return response.json();
+    })
+    // .then (console.log)
+    .then((data) => {
+      city.textContent = data.name;
+      conditions.textContent = data.weather[0].description;
+      temp.innerHTML = Math.floor(data.main.temp - 273.5) + " &#8451;";
+    })
+    .catch((error) => {
+      console.log(`Error loading data for ${defaultCity}`);
+    });
 }
 
 submitBtn.addEventListener("click", function () {
-    console.log(searchbar.value);
-    let searchCity = searchbar.value;
-    city.textContent = searchCity;
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${openWeatherKey}`)
+  console.log(searchbar.value);
+  let searchCity = searchbar.value;
+  city.textContent = searchCity;
+  fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${openWeatherKey}`
+  )
     .then((response) => {
-        if (!response.ok) throw new Error(response.status);
-        return response.json();
-     })
-    .then((data) => {
-        city.textContent = data.name;
-        conditions.textContent = data.weather[0].description;
-        temp.innerHTML = Math.floor((data.main.temp)-273.5) + " &#8451;";           
+      if (!response.ok) throw new Error(response.status);
+      return response.json();
     })
-    .catch ((error) => {console.log("City not found")})
+    .then((data) => {
+      city.textContent = data.name;
+      conditions.textContent = data.weather[0].description;
+      temp.innerHTML = Math.floor(data.main.temp - 273.5) + " &#8451;";
+    })
+    .catch((error) => {
+      console.log("City not found");
+    });
 });
 
-
-
-window.onload = getWeather ();
+window.onload = getWeather();
