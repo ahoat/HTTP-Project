@@ -50,4 +50,4 @@ categorybuttons.forEach((button) =>
   })
 );
 
-//getNews();
+getNews();
