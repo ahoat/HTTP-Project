@@ -31,7 +31,7 @@ function getNews() {
           img.alt = "photograph from news article";
         } else {
           image.childNodes[0].src = data.articles[index].urlToImage;
-          image.childNodes[0].src = "photograph from news article";
+          image.childNodes[0].alt = "photograph from news article";
         }
       });
       newsArtile.forEach((news, index) => {
