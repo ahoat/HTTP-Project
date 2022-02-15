@@ -1,8 +1,12 @@
-# HTTP-Project
+![project logo banner](https://github.com/ahoat/HTTP-Project/blob/main/newsflix%20logo.JPG)
+# *BREAKING NEWS*
 
-Project created by Ahoa and Maria for the [Founders & Coders](https://learn.foundersandcoders.com/course/syllabus/pre-apprenticeship/http/project/) Skills Bootcamp 2022.
+##  Ahoa and Maria have created a news and weather app!
 
-A weather and news app made with HTML, CSS, Vanilla JS and two API’s - [NewsAPI](https://newsapi.org/) & [OpenWeatherAPI](https://openweathermap.org/)
+>The two aspiring developers have collaborated for the first time to create a project as part of their journey with 
+ [Founders & Coders](https://learn.foundersandcoders.com/course/syllabus/pre-apprenticeship/http/project/) Skills Bootcamp 2022.
+>
+> A weather and news app made with HTML, CSS, Vanilla JS and two API’s - [NewsAPI](https://newsapi.org/) & [OpenWeatherAPI](https://openweathermap.org/)
 
 ---
 
@@ -25,7 +29,10 @@ A weather and news app made with HTML, CSS, Vanilla JS and two API’s - [NewsAP
 -	Grid CSS & CSS Animation 
 -	eventListeners & DOM manipulation
 -	API fetch requests
+-	Error handling with .catch and visual feedback to the user
 
 ### Improvements to be made:
+- [ ] Add icons to the various weather conditions
+- [ ] Possible stretch goal is to use geo-location to change the default city for weather and news
 
 ### Screenshots:
