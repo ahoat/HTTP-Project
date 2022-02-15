@@ -38,7 +38,7 @@ function getNews() {
         news.innerHTML = data.articles[index].description;
       });
       newsLink.forEach((link, index) => {
-        link.innerHTML = "Link to full article";
+        link.innerHTML = "Read the full article";
         newsLink.href = data.articles[index].url;
       });
     })
