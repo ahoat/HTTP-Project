@@ -63,6 +63,7 @@ const temp = document.querySelector(".temp");
 const conditions = document.querySelector(".conditions");
 const openWeatherKey = "be955245690a12ec7d74434862d819af";
 const city = document.querySelector(".city");
+const errorMessage = document.querySelector(".error");
 
 let defaultCity = "London";
 
@@ -100,10 +101,13 @@ submitBtn.addEventListener("click", function () {
       city.textContent = data.name;
       conditions.textContent = data.weather[0].description;
       temp.innerHTML = Math.floor(data.main.temp - 273.5) + " &#8451;";
+      errorMessage.textContent = ""
     })
     .catch((error) => {
-      console.log("City not found");
-    });
+          errorMessage.textContent = "Please enter a valid city"
+          errorMessage.style.color = "red"
+        }
+      )
 });
 
 window.onload = getWeather();
