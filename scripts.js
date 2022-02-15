@@ -31,18 +31,24 @@ function getNews() {
           img.alt = "photograph from news article";
         } else {
           image.childNodes[0].src = data.articles[index].urlToImage;
-          image.childNodes[0].src = "photograph from news article";
+          image.childNodes[0].alt = "photograph from news article";
         }
       });
       newsArtile.forEach((news, index) => {
         news.innerHTML = data.articles[index].description;
       });
       newsLink.forEach((link, index) => {
-        link.innerHTML = "Link to full article";
+        link.innerHTML = "Read the full article";
         newsLink.href = data.articles[index].url;
       });
     })
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      console.log(error);
+      newsSubTitle.innerHTML = `
+    Whoops we're having trouble loading your stories 😢
+    Please try again later.
+    ${error}`;
+    });
 }
 
 const categorybuttons = Array.from(document.querySelectorAll(".category"));
@@ -101,13 +107,12 @@ submitBtn.addEventListener("click", function () {
       city.textContent = data.name;
       conditions.textContent = data.weather[0].description;
       temp.innerHTML = Math.floor(data.main.temp - 273.5) + " &#8451;";
-      errorMessage.textContent = ""
+      errorMessage.textContent = "";
     })
     .catch((error) => {
-          errorMessage.textContent = "Please enter a valid city"
-          errorMessage.style.color = "red"
-        }
-      )
+      errorMessage.textContent = "Please enter a valid city";
+      errorMessage.style.color = "red";
+    });
 });
 
 window.onload = getWeather();
