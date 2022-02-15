@@ -70,6 +70,7 @@ const conditions = document.querySelector(".conditions");
 const openWeatherKey = "be955245690a12ec7d74434862d819af";
 const city = document.querySelector(".city");
 const errorMessage = document.querySelector(".error");
+const weatherIcon = document.querySelector(".weather-icon");
 
 let defaultCity = "London";
 
@@ -84,6 +85,8 @@ function getWeather() {
     // .then (console.log)
     .then((data) => {
       city.textContent = data.name;
+      let icon = data.weather[0].icon;
+      weatherIcon.src = `https://openweathermap.org/img/wn/${icon}@2x.png`
       conditions.textContent = data.weather[0].description;
       temp.innerHTML = Math.floor(data.main.temp - 273.5) + " &#8451;";
     })
@@ -104,7 +107,10 @@ submitBtn.addEventListener("click", function () {
       return response.json();
     })
     .then((data) => {
+      console.log(data);
       city.textContent = data.name;
+      let icon = data.weather[0].icon;
+      weatherIcon.src = `https://openweathermap.org/img/wn/${icon}@2x.png`
       conditions.textContent = data.weather[0].description;
       temp.innerHTML = Math.floor(data.main.temp - 273.5) + " &#8451;";
       errorMessage.textContent = "";
