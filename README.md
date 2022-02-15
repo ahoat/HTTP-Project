@@ -7,12 +7,12 @@ A weather and news app made with HTML, CSS, Vanilla JS and two API’s - [NewsAP
 ---
 
 ## User stories:
-- [ ] I want to see top news stories on load.
-- [ ] I want to be able select different news categories.
-- [ ] I want to check the live weather in different cities.
-- [ ] I want to view the app on all of my devices.
-- [ ] I want to be told when something goes wrong.
-- [ ] As an impaired user, I want to be able to use this app.
+- [x] I want to see top news stories on load.
+- [x] I want to be able select different news categories.
+- [x] I want to check the live weather in different cities.
+- [x] I want to view the app on all of my devices.
+- [x] I want to be told when something goes wrong.
+- [x] As an impaired user, I want to be able to use this app.
 
 ## User journey:
 1.	As the page loads the user can see the top five new stories on load.
@@ -21,7 +21,7 @@ A weather and news app made with HTML, CSS, Vanilla JS and two API’s - [NewsAP
 
 ---
 
-# Features include:
+## Features include:
 -	Grid CSS & CSS Animation 
 -	eventListeners & DOM manipulation
 -	API fetch requests
