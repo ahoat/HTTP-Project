@@ -32,7 +32,9 @@
 -	Error handling with .catch and visual feedback to the user
 
 ### Improvements to be made:
-- [ ] Add icons to the various weather conditions
+- [x] Add icons to the various weather conditions
 - [ ] Possible stretch goal is to use geo-location to change the default city for weather and news
 
 ### Screenshots:
+
+![News screenshot](https://github.com/ahoat/HTTP-Project/blob/main/NewsFlix-News%20Screenshot.JPG) ![Weather screenshot](https://github.com/ahoat/HTTP-Project/blob/main/NewsFlix-Weather%20Screenshot.JPG)
