@@ -37,4 +37,4 @@
 
 ### Screenshots:
 
-![News screenshot](https://github.com/ahoat/HTTP-Project/blob/main/NewsFlix-News%20Screenshot.JPG) ![Weather screenshot](https://github.com/ahoat/HTTP-Project/blob/main/NewsFlix-Weather%20Screenshot.JPG)
+<img src="https://github.com/ahoat/HTTP-Project/blob/main/NewsFlix-News%20Screenshot.JPG" width="30%" />           <img src="https://github.com/ahoat/HTTP-Project/blob/main/NewsFlix-Weather%20Screenshot.JPG" width="30%" />
